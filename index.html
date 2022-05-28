@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
 
-
-
+    <link rel="stylesheet" href="assist/CSS/animate.min.css">
     <link rel="stylesheet" href="assist/fontawesome/css/all.css" >      <!-- fontawesome link -->
     <link rel="stylesheet" href="assist/CSS/bootstrap.min.css">         <!-- bootstrap link -->
     <link rel="stylesheet" href="assist/CSS/style.css">                 <!-- css style link -->
@@ -15,20 +15,20 @@
     
     
 </head>
-<body>
+<body id="body">
     
 
     <!-- section One Navbar -->
 
-    <div class="navLine ">
-        <nav class="navbar navbar-expand-lg navbar-light text-black fw-bold shadow-sm" aria-label="Fifth navbar example">
+    <div class="navLine " > 
+        <nav class="navbar navbar-expand-lg navbar-light  fw-bold shadow-sm" id="navLine" aria-label="Fifth navbar example">
             <div class="container">
                 <a class="navbar-brand" href="#"> <img src="assist/Images/logo.png" alt="Cara Logo"> </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-        
+                
                 <div class="collapse navbar-collapse justify-content-end" id="navbarsExample05">
                     <ul class="navLinks navbar-nav justify-content-between  mb-2 mb-lg-0 w-50">
 
@@ -53,13 +53,16 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="Cart nav-link position-relative" href="#"> 
+                            <a class="Cart nav-link position-relative"  onclick="oCart()"> 
                                 <div>
                                    <i class="fa-solid fa-bag-shopping"></i>
                                    <span class="cartN ">0</span> 
                                 </div>
-                                
                             </a>
+                        </li>
+
+                        <li class="darkTogle nav-item fs-4" onclick="darkMode()">
+                            <i class="nav-link fa-solid fa-moon"></i>
                         </li>
                     </ul>
 
@@ -68,6 +71,8 @@
           </nav>
     </div>
    
+
+    
     
 
 
@@ -75,10 +80,18 @@
 
     <!-- section Tow Header -->
 
-    <header class="HeaderBg">
+    <header class="HeaderBg pos">
+        <!-- cart section -->
+        <div class="myCart close" id="yCart">
+            <button class="btn fs-3 text-light m-2" onclick="xCart()">X</button>
+            
+        </div>
+        
+
+
         <div class="container">
             <div class="TradeIn d-flex flex-column justify-content-center align-items-center align-items-lg-start">
-                <h5>Trade-in-offer</h5>
+                <h5 class="">Trade-in-offer</h5>
                 <h1 class="fw-bold"> Super value deals </h1>
                 <h1 class="allProducts fw-bold my-4"> On all products </h1>
                 <p class="text-muted">save more with coupons & up to 70% off!</p>
@@ -86,6 +99,8 @@
                 <a class="shopNow" href="#"> Shop Now </a>
             </div>
         </div>
+
+        
     </header>
 
 
@@ -100,43 +115,43 @@
     <div class="container my-5 pb-5">
         <div class="Services row row-cols-1  row-cols-md-3 row-cols-lg-6" >
             
-            <div class="col">
-                <div class="Service-1 card mt-5 shadow ">
+            <div class="col wow animate__animated animate__backInUp ">
+                <div class="ourService Service-1 card mt-5 shadow ">
                     <img class="mt-4 m-2" src="assist/Images/f1.png" alt="">
                     <button class="btn btn-light mb-3 m-2"  type="button">Free Shopping</button>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="Service-2 card mt-5 shadow ">
+            <div class="col wow animate__animated animate__backInUp ">
+                <div class="ourService Service-2 card mt-5 shadow ">
                     <img class="mt-4 m-2" src="assist/Images/f2.png" alt="">
                     <button class="btn btn-light mb-3 m-2"  type="button">Online Order</button>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="Service-3 card mt-5 shadow ">
+            <div class="col wow animate__animated animate__backInUp">
+                <div class="ourService Service-3 card mt-5 shadow ">
                     <img class="mt-4 m-2" src="assist/Images/f3.png" alt="">
                     <button class="btn btn-light mb-3 m-2"  type="button">Save Money</button>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="Service-4 card mt-5 shadow ">
+            <div class="col wow animate__animated animate__backInUp">
+                <div class="ourService Service-4 card mt-5 shadow ">
                     <img class="mt-4 m-2" src="assist/Images/f4.png" alt="">
                     <button class="btn btn-light mb-3 m-2"  type="button">Promotions</button>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="Service-5 card mt-5 shadow ">
+            <div class="col wow animate__animated animate__backInUp">
+                <div class="ourService Service-5 card mt-5 shadow ">
                     <img class="mt-4 m-2" src="assist/Images/f5.png" alt="">
                     <button class="btn btn-light mb-3 m-2"  type="button">Happy Sell</button>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="Service-6 card mt-5 shadow ">
+            <div class="col wow animate__animated animate__backInUp">
+                <div class="ourService Service-6 card mt-5 shadow ">
                     <img class="mt-4 m-2" src="assist/Images/f6.png" alt="">
                     <button class="btn btn-light mb-3 m-2"  type="button">F24/7 Support</button>
                 </div>
@@ -746,6 +761,7 @@
 
 
 
+    
     <!-- section Eight Newsletters -->
 
     <div class="Newsletters d-flex align-items-center">
@@ -798,11 +814,11 @@
                     <h5 class="fw-bold mt-4">Follow Us</h5>
 
                     <div class="followUs">
-                        <a class="mr-2" href="#"> <i class="fa-brands fa-facebook-f"></i> </a>
-                        <a class="mx-2" href="#"> <i class="fa-brands fa-twitter"></i> </a>
-                        <a class="mx-2" href="#"> <i class="fa-brands fa-instagram"></i></a>
-                        <a class="mx-2" href="#"> <i class="fa-brands fa-pinterest-p"></i> </a>
-                        <a class="mx-2" href="#"> <i class="fa-brands fa-youtube"></i> </a>
+                        <a class="mr-2" href="https://www.facebook.com/"> <i class="fa-brands fa-facebook-f"></i> </a>
+                        <a class="mx-2" href="https://twitter.com/"> <i class="fa-brands fa-twitter"></i> </a>
+                        <a class="mx-2" href="https://instagram.com/"> <i class="fa-brands fa-instagram"></i></a>
+                        <a class="mx-2" href="https://pinterest.com/"> <i class="fa-brands fa-pinterest-p"></i> </a>
+                        <a class="mx-2" href="https://youtube.com/"> <i class="fa-brands fa-youtube"></i> </a>
                     </div>
 
                 </div>
@@ -870,8 +886,16 @@
 
     
     
-    <script src="./assist/JS/jquery-3.6.0.min.js"></script>
-    <script src="./assist/JS/popper.min.js"></script>
-    <script src="./assist/JS/bootstrap.min.js"></script>
+    <script src="assist/JS/jquery-3.6.0.min.js"></script>
+    <script src="assist/JS/popper.min.js"></script>
+    <script src="assist/JS/bootstrap.min.js"></script>
+
+    <script src="assist/JS/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <script src="assist/JS/main.js"></script>
+
 </body>
 </html>
