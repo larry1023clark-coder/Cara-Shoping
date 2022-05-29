@@ -11,9 +11,9 @@
     --darkMode: #302f2f ;
 }
 
-body{
+body, html{
+    position: relative;
     overflow-x : hidden ;
-
 }
 
 
