@@ -23,7 +23,8 @@ body, html{
 .darBody{
     background-color: var(--darkBody) !important;
     color: white;
-    transition: all 1s;
+    transition: all 1s linear;
+    transition-timing-function: ease-out;
 }
 
 
@@ -43,7 +44,9 @@ body, html{
 
 .navbar-dark, .bg-dark{
     transition: all 1s;
+
 }
+
 
 
 
@@ -189,12 +192,13 @@ body, html{
     height: 700px;
     width: 400px;
     background-color: var(--bGreen);
+    opacity: 95%;
     color: white;
 
     position: absolute;
 
-    /* display: none; */
-    animation-name: cartMove;
+    display: none;
+    animation-name: cartMoveIn;
     animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -208,11 +212,12 @@ body, html{
     animation-iteration-count: 1;
 
     display: none;
+    transition: all 2s;
 }
 
 
 
-@keyframes cartMove {
+@keyframes cartMoveIn {
     from {right: -400px;}
     to {right: 0px;}
 }
@@ -224,16 +229,6 @@ body, html{
 }
 
 
-/* @keyframes cartMove {
-    from {width: 0px;}
-    to {width: 400px;}
-}
-
-
-@keyframes cartMoveOut {
-    from {width: 400px;}
-    to {width: 0px;}
-} */
 
 
 

@@ -11,6 +11,7 @@ function oCart (){
 
 
 function xCart (){
+    // $("#yCart").fadeOut(2000);
     cart.classList.toggle('close') ;
     // cart.style.display = "none";
 }
@@ -37,7 +38,7 @@ function darkMode(){
     var ourService  = document.querySelectorAll('.ourService')
     ourService.forEach(x => x.classList.toggle('darkMode'));
     
-    document.querySelector('.input-group input').classList.toggle('darkForm')
+    document.querySelector('.input-group input').classList.toggle('darkForm');
     
 
     // for( var i = 0; i < ServiceBg.length; i++){
