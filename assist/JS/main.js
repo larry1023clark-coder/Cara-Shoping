@@ -1,9 +1,7 @@
 
 
-
+// open and close cart
 var cart = document.getElementById('yCart');
- 
-
 function oCart (){
     cart.style.display = "block";
     cart.classList.toggle('close') ;
@@ -36,29 +34,22 @@ function darkMode(){
 
     var pCard = document.querySelectorAll('.pCard')
     pCard.forEach(x => x.classList.toggle('darkMode'));
+    pCard.forEach(x => x.classList.toggle('pCardShadoD'));
 
     var ourService  = document.querySelectorAll('.ourService')
     ourService.forEach(x => x.classList.toggle('darkMode'));
     
     document.querySelector('.input-group input').classList.toggle('darkForm');
     
+    
 
-    // for( var i = 0; i < ServiceBg.length; i++){
-    //     console.log(ServiceBg[i])
-    //     console.log(document.getElementsByClassName(ServiceBg[i]))
-
-    //     document.getElementsByClassName(ServiceBg[i]).classList.toggle('darkMode');
-    // }
-
-
-    // document.getElementById('demo').src = "myImage.png";
-
-    var logoImg = document.getElementById('brandLogo').src;
-    console.log(logoImg)
-    if(logoImg == "assist/Images/logo.png"){
-        logoImg = "assist/Images/logo2.png";
-    }else{
-        logoImg = "assist/Images/logo2.png";
+    // change logo image
+    var logoImg = document.getElementById('brandLogo');
+    var bodyName = document.querySelector('body').classList ;
+    if(bodyName[0] >= "darkBody") {
+        logoImg.src = "assist/Images/logo2.png";
+    } else {
+        logoImg.src = "assist/Images/logo.png";
     }
 }
 
@@ -68,9 +59,3 @@ function darkMode(){
 
 
 
-
-// const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-// nnif (prefersDarkScheme.matches) {
-//     n  document.body.classList.add('dark-theme');
-// n} else {
-//     n  document.body.classList.remove('dark-theme');n}

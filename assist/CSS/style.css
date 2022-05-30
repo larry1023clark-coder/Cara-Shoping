@@ -63,6 +63,15 @@ body, html{
 }
 
 
+.pCardShadoL:hover{
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.15);
+}
+
+
+.pCardShadoD:hover{
+    box-shadow: 0 1rem 1rem rgba(228, 227, 227, 0.15);
+    transition: all 0s;
+}
 
 
 
@@ -334,6 +343,10 @@ body, html{
     text-align: center;
     padding: 12px 0px;
 }
+
+
+
+
 
 
 
