@@ -20,17 +20,34 @@
 
     <!-- section One Navbar -->
 
-    <div class="navLine " > 
-        <nav class="navbar navbar-expand-lg navbar-light  fw-bold shadow-sm" id="navLine" aria-label="Fifth navbar example">
+    <div class="navLine sticky-top" > <!--sticky-top not workig couse we use overflow-x -->
+        <nav class="navbar navbar-expand-lg navbar-light  fw-bold shadow-sm " id="navLine" aria-label="Fifth navbar example">
             <div class="container">
-                <a class="navbar-brand" href="#"> <img src="assist/Images/logo.png" alt="Cara Logo"> </a>
+                <a class="navbar-brand" href="#"> <img id="brandLogo" src="assist/Images/logo.png" alt="Cara Logo"> </a>
+                
+                <ul class="navLinks flex-row navbar-nav  order-xl-1 justify-content-end">
+                    <li class="nav-item mx-5">
+                        <a class="Cart nav-link position-relative"  onclick="oCart()"> 
+                            <div>
+                               <i class="fa-solid fa-bag-shopping"></i>
+                               <span class="cartN ">0</span> 
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="darkTogle nav-item fs-4" onclick="darkMode()">
+                        <i class="nav-link fa-solid fa-moon"></i>
+                    </li>
+                </ul>
+
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
+
                 <div class="collapse navbar-collapse justify-content-end" id="navbarsExample05">
-                    <ul class="navLinks navbar-nav justify-content-between  mb-2 mb-lg-0 w-50">
+                    <ul class="navLinks navbar-nav ms-auto justify-content-between  mb-2 mb-lg-0 w-50">
 
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#"> Home </a>
@@ -52,7 +69,7 @@
                             <a class="nav-link" href="#"> Contact </a>
                         </li>
 
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="Cart nav-link position-relative"  onclick="oCart()"> 
                                 <div>
                                    <i class="fa-solid fa-bag-shopping"></i>
@@ -63,10 +80,12 @@
 
                         <li class="darkTogle nav-item fs-4" onclick="darkMode()">
                             <i class="nav-link fa-solid fa-moon"></i>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </div>
+
+                
             </div>
           </nav>
     </div>
@@ -84,7 +103,6 @@
         <!-- cart section -->
         <div class="myCart close" id="yCart">
             <button class="btn fs-3 text-light m-2" onclick="xCart()">X</button>
-            
         </div>
         
 

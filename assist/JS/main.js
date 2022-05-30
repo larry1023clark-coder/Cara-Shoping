@@ -29,8 +29,10 @@ function darkMode(){
     document.getElementById('navLine').classList.toggle('navbar-dark')
     document.getElementById('navLine').classList.toggle('bg-dark')
 
-    document.getElementById('body').classList.toggle('darBody')
-    document.querySelector('.HeaderBg').classList.toggle('darBody')
+    document.getElementById('body').classList.toggle('darkBody')
+    document.querySelector('.HeaderBg').classList.toggle('darkBody')
+    document.querySelector('.HeaderBg').classList.toggle('darkness')
+    
 
     var pCard = document.querySelectorAll('.pCard')
     pCard.forEach(x => x.classList.toggle('darkMode'));
@@ -48,6 +50,16 @@ function darkMode(){
     //     document.getElementsByClassName(ServiceBg[i]).classList.toggle('darkMode');
     // }
 
+
+    // document.getElementById('demo').src = "myImage.png";
+
+    var logoImg = document.getElementById('brandLogo').src;
+    console.log(logoImg)
+    if(logoImg == "assist/Images/logo.png"){
+        logoImg = "assist/Images/logo2.png";
+    }else{
+        logoImg = "assist/Images/logo2.png";
+    }
 }
 
 
