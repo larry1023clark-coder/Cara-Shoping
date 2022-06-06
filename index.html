@@ -29,16 +29,16 @@
                 <a class="navbar-brand" href="#"> <img id="brandLogo" src="assist/Images/logo.png" alt="Cara Logo"> </a>
                 
                 <ul class="navLinks flex-row navbar-nav  order-xl-1 justify-content-end">
-                    <li class="nav-item mx-5">
+                    <li class="nav-item mx-5"title="Shopping Cart">
                         <a class="Cart nav-link position-relative"  onclick="oCart()"> 
                             <div>
-                               <i class="fa-solid fa-bag-shopping"></i>
+                               <i class="fa-solid fa-bag-shopping" ></i>
                                <span class="cartN ">0</span> 
                             </div>
                         </a>
                     </li>
 
-                    <li class="darkTogle nav-item fs-4" onclick="darkMode()" >
+                    <li class="darkTogle nav-item fs-4" title="Dark/Light Mode" onclick="darkMode()" >
                         <i class="nav-link fa-solid fa-moon"></i>
                     </li>
                 </ul>
@@ -104,8 +104,24 @@
 
     <header class="HeaderBg pos">
         <!-- cart section -->
-        <div class="myCart close" id="yCart">
-            <button class="btn fs-3 text-light m-2" onclick="xCart()">X</button>
+        <div class="myCart close" id="yCart" >
+            <button class="btn fs-4 text-light" onclick="xCart()">X</button>
+
+            <div class="d-flex justify-content-between px-3 shadow ps-5">
+                <h5 class="ps-5">Item</h5>
+                <h5>Unit price</h5>
+                <h5>units</h5>
+            </div>
+
+            <div class="cartAddItems">
+            </div>
+            
+            <div class="text-center mx-3">
+                <hr>
+                <h5>Sub Total ( <span id="subTotalItem"> 0 </span> &nbsp; <span class="itemOrItems">item</span>  ): &nbsp; $ <span id="subTotalPrice">0.00</span> </h5>
+                <button class="btn btn-dark my-3 px-5">Place Order</button>
+            </div>
+            
         </div>
         
 
@@ -203,12 +219,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/f1.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/f1.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" >Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -218,10 +234,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">29.99</h4> </a>
+                                <h4 class="price m-0">29.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f1.jpg" data-price="29.99" data-type="Shirt"></i>
 
                         </div>
                     </div>
@@ -231,12 +247,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/f2.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/f2.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -246,10 +262,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">24.99</h4> </a>
+                                <h4 class="price m-0" data-price="24.99">24.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f2.jpg" data-price="24.99" data-type="Shirt"></i>
 
                         </div>
                     </div>
@@ -259,12 +275,12 @@
 
                 <div class="col">
                     <div class="pCard card  mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3 " src="assist/Images/f3.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3 " src="assist/Images/f3.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -274,10 +290,39 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">19.99</h4> </a>
+                                <h4 class="price m-0" data-price="19.99">19.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f3.jpg" data-price="19.99" data-type="Shirt"></i>
+                    
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card  mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3 " src="assist/Images/f4.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="19.99">19.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f4.jpg" data-price="19.99" data-type="Shirt"></i>
 
                         </div>
                     </div>
@@ -287,12 +332,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3 " src="assist/Images/f4.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/f5.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -302,10 +347,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">25.99</h4> </a>
+                                <h4 class="price m-0" data-price="30.99">30.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f5.jpg" data-price="30.99" data-type="Shirt"></i>
 
                         </div>
                     </div>
@@ -315,12 +360,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/f5.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/f6.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -330,38 +375,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">30.99</h4> </a>
+                                <h4 class="price m-0" data-price="32.99">32.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="col">
-                    <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/f6.jpg" alt="Product Image"> </a>
-                        
-                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
-                            <div class="card-text">
-                                <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
-
-                                <div class="stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-    
-                                <a href="#"> <h4 class="price m-0">32.99</h4> </a>
-                            </div>    
-                                
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f6.jpg" data-price="32.99" data-type="Shirt"></i>
 
                         </div>
                     </div>
@@ -376,7 +393,7 @@
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Pants">Pants</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -386,10 +403,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">30.99</h4> </a>
+                                <h4 class="price m-0" data-price="30.99">30.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f7.jpg" data-price="30.99" data-type="Shirt"></i>
 
                         </div>
                     </div>
@@ -404,7 +421,7 @@
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Blouse">Blouse</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -414,10 +431,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">36.99</h4> </a>
+                                <h4 class="price m-0" data-price="36.99">36.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f8.jpg" data-price="36.99" data-type="Shirt"></i>
 
                         </div>
                     </div>
@@ -467,12 +484,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/n1.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/n1.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -482,10 +499,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">19.99</h4> </a>
+                                <h4 class="price m-0" data-price="19.99">19.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
 
                         </div>
                     </div>
@@ -495,12 +512,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/n2.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/n2.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -510,10 +527,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">19.99</h4> </a>
+                                <h4 class="price m-0" data-price="19.99">19.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
 
                         </div>
                     </div>
@@ -523,12 +540,12 @@
 
                 <div class="col">
                     <div class="pCard card  mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3 " src="assist/Images/n3.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3 " src="assist/Images/n3.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -538,10 +555,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">15.99</h4> </a>
+                                <h4 class="price m-0" data-price="15.99">15.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
 
                         </div>
                     </div>
@@ -551,12 +568,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3 " src="assist/Images/n4.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3 " src="assist/Images/n4.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -566,10 +583,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">16.99</h4> </a>
+                                <h4 class="price m-0" data-price="16.99">16.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
 
                         </div>
                     </div>
@@ -579,12 +596,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/n5.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/n5.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -594,10 +611,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">10.99</h4> </a>
+                                <h4 class="price m-0" data-price="10.99">10.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
 
                         </div>
                     </div>
@@ -607,12 +624,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/n6.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/n6.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shorts">Shorts</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -622,10 +639,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">20.99</h4> </a>
+                                <h4 class="price m-0" data-price="20.99">20.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
 
                         </div>
                     </div>
@@ -635,12 +652,12 @@
 
                 <div class="col">
                     <div class="pCard card mb-5 pCardShadoL">
-                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/n7.jpg" alt="Product Image"> </a>
+                        <img class="oImg card-img-top p-3" src="assist/Images/n7.jpg" alt="Product Image">
                         
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -650,10 +667,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">29.99</h4> </a>
+                                <h4 class="price m-0" data-price="29.99">29.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
 
                         </div>
                     </div>
@@ -662,15 +679,15 @@
 
 
                 <div class="col">
-                    <div class="pCard card mb-5 pCardShadoL shadow-lg">
-                        <a href="#">
-                            <img class="oImg card-img-top p-3" src="assist/Images/n8.jpg" alt="Product Image">
-                        </a>
+                    <div class="pCard card mb-5 pCardShadoL">
+                        
+                        <img class="oImg card-img-top p-3" src="assist/Images/n8.jpg" alt="Product Image">
+                        
 
                         <div class="card-body d-flex justify-content-between align-items-end pt-0" >
                             <div class="card-text">
                                 <p class="text-muted m-0">adidas</p>
-                                <h4 class="card-title">Shirt</h4>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
 
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i>
@@ -680,10 +697,10 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
     
-                                <a href="#"> <h4 class="price m-0">29.99</h4> </a>
+                                <h4 class="price m-0" data-price="29.99">29.99</h4>
                             </div>    
                                 
-                            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
 
                         </div>
                     </div>

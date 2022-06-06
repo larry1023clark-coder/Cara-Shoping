@@ -235,10 +235,18 @@ body, html{
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     
+    z-index: 3;
+    overflow-y: auto;
 }
 
+
+.myCart button:focus{
+    box-shadow: none;
+}
+
+
+
 .close{
-   
     animation-name: cartMoveOut;
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -262,6 +270,24 @@ body, html{
 
 
 
+.removeItem, .decrease, .increase{
+    cursor: pointer;
+}
+
+
+.cartProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+
+.cartProduct img{
+    border-radius: 15px;
+
+}
 
 
 
@@ -327,13 +353,13 @@ body, html{
 
 
 
-.fProducts a {
+.fProducts .price {
     color: var(--bGreen);
-    text-decoration: none;
+    
 }
 
 
-.fProducts a i{
+.fProducts .fa-cart-shopping{
     background-color: var(--lGreen);
     width: 45px;
     height: 45px;
@@ -342,6 +368,9 @@ body, html{
     border-radius: 50px;
     text-align: center;
     padding: 12px 0px;
+
+    color: var(--bGreen);
+    cursor: pointer;
 }
 
 
@@ -349,7 +378,9 @@ body, html{
 
 
 
-
+/* .fProducts .pCard:hover{
+    transform: scale(1.1, 1.1);
+} */
 
 .fProducts .oImg:hover{
     padding: 0% !important;
@@ -364,7 +395,7 @@ body, html{
 }
 
 
-.fProducts a i:hover{
+.fProducts .fa-cart-shopping:hover{
     font-size: 29px;
     transition: 0.5s;
 }
