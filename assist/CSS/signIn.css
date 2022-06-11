@@ -1,0 +1,115 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+    /* font-family:Arial, Helvetica, sans-serif; */
+    font-family: 'Helvetica', FontAwesome, sans-serif;
+    --bGreen: #088178;
+    --lGreen: #E3E6F3;
+    --lGray: #E3E6F3;
+    --dYellow: #F3B519 ;
+    --dBlue: #041E42;
+
+    --darkBody: #1E1E1E ;
+    --darkMode: #302f2f ;
+}
+
+
+
+body{
+    /* height: 91vh; */
+    background-image: url(../Images/hero4.png);
+    /* background-position: center; */
+    background-size: cover;
+    
+}
+
+
+
+
+@media (min-width: 992px){
+    .main{
+        height: 100vh;
+    }   
+}
+
+
+
+
+
+
+
+
+.cardBackground{
+    background-color: #c7c6c699 !important;
+    border-radius: 20px;
+    
+}
+
+
+.cardImg{
+    border-radius: 20px 0 0 20px;
+}
+
+
+.card-title{
+    color: var(--bGreen);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+
+
+.socialLogoin i{
+    background-color: var(--lGreen);
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid var(--lGreen);
+    border-radius: 50px;
+    text-align: center;
+    padding: 12px 0px;
+
+    color: var(--bGreen);
+    cursor: pointer;
+}
+
+
+.socialLogoin i:hover{
+    background-color: var(--bGreen);
+    color: var(--lGreen);
+    transition: all 1s;
+}
+
+
+
+
+.form-control{
+    background-color: var(--lGreen) !important;
+    outline: none !important;
+}
+
+.signInForm .btn, #signUpBut{
+    background-color: var(--bGreen) !important;
+    color: var(--lGreen);
+}
+
+
+.signInForm .checkbox{
+    text-align: left !important;
+}
+
+
+
+.card-body .signUp{
+    color: var(--bGreen);
+    font-weight: bold;
+    
+    /* text-decoration: none; */
+    /* text-shadow: 2px 2px rgba(170, 169, 169, 0.651); */
+}
+

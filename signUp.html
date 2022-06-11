@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assist/fontawesome/css/all.css" >      <!-- fontawesome link -->
+    <link rel="stylesheet" href="assist/CSS/bootstrap.min.css">         <!-- bootstrap link -->
+    <link rel="stylesheet" href="assist/CSS/signIn.css">                <!-- css style link -->
+
+    <title>Cara Register</title>
+</head>
+<body>
+    
+
+    <div class="main vh-lg-100 d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="cardBackground card my-5 my-lg-0  shadow-lg">
+                <div class="row">
+                    <div class="col-12 col-md-5 d-none d-md-block">
+                        <img class="cardImg w-100 h-100" src="assist/Images/last-wellcome.png" alt="Sign up image">
+                    </div>
+
+                    <div class=" col-12 col-md-7">
+                        <div class="card-body me-lg-4 my-4">
+
+                            <h1 class="card-title">
+                                Sign in to
+                                <img class="brandLogo" src="assist/Images/logo.png" alt="Cara Logo">
+                            </h1>
+            
+                            <div class="socialLogoin text-center my-4">
+                                <a class="text-decoration-none" href="https://www.facebook.com/"> <i class="fa-brands fa-facebook-f"></i> </a>
+                                <a class="text-decoration-none mx-4" href="https://myaccount.google.com/profile"> <i class="fa-brands fa-google"></i> </a>
+                                <a class="text-decoration-none" href="https://www.linkedin.com"> <i class="fa-brands fa-linkedin-in"></i> </a>
+                            </div>
+
+                            <p class="text-muted text-center mt-3">or usr your email account:</p>
+
+
+
+                            <form class="signUpForm" name="signUpForm" onsubmit="return submitSignUp()" action="main.html" >
+                                <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                
+                                    <div class="col">
+                                        <input type="text" name="" id="fName" placeholder="&#xf2c0;  Frist Name" class="form-control form-control-lg  " title="Insert only letters ">
+                                        <p class="checkFName"></p>
+                                    </div>
+
+                                    <div class="col">    
+                                        <input type="text" name="" id="lname" placeholder="&#xf2c0;  Last Name" class="form-control form-control-lg  " title="Insert only letters ">
+                                        <p class="checkLName"></p>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                    <div class="col">
+                                        <input type="text" name="" id="inputEmailNew" placeholder="&#xf003;  Email" class="form-control form-control-lg ">
+                                        <p class="checkEmail"></p>
+                                    </div>    
+                                    
+                                    <div class="col">
+                                        <input type="text" name="" id="inputPhone" placeholder="&#xf095;  Phone number" class="form-control form-control-lg " title="Enter 11 number">
+                                        <p class="checkPhon"></p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                    <div class="col">
+                                        <h5>Gender</h5>
+
+                                        <input type="radio" name="Gender" id="gmale" value="Male"> <label for="gmale" class="me-3">Male</label>
+                                        <input type="radio" name="Gender" id="gFemale" value="Female"> <label for="gFemale">Female</label> <br>
+                                        
+                                        <span class="checkGender ms-3"></span> <br>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <h5 class="mb-0">Birthdate</h5>
+                                        <input type="date" name="" id="inputBirthdate" class="form-control" title="Enter date between 1880 and 2015"> 
+                                        <span class="CheckBirthdate ms-3"></span>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                    <div class="col">
+                                        <input type="password" name="" id="inputNewPass" placeholder="&#xf023;  password" class="form-control form-control-lg">
+                                        <p class="CheckNewPass"></p>
+                                    </div>
+
+                                    <div class="col">
+                                        <input type="password" name="" id="inputConfirmPass" placeholder="&#xf023;  password" class="form-control form-control-lg">
+                                        <p class="CheckConfirmPass"></p>
+                                    </div>
+                                </div>
+
+                                <input type="submit" value="SIGN UP" id="signUpBut" class="btn btn-success rounded-pill btn-lg mx-auto d-md-block mt-4 px-5">
+
+                            </form>
+
+
+                            <p class=" mt-5"> Already Signed Up? <a class="signUp" href="index.html"> SIGN IN</span> </a></p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- scripts link --------------------------- -->
+    <script src="assist/JS/jquery-3.6.0.min.js"></script>
+    <script src="assist/JS/popper.min.js"></script>
+    <script src="assist/JS/bootstrap.min.js"></script>
+    
+    <script src="assist/JS/signUp.js"></script>
+</body>
+</html>

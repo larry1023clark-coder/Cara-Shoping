@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+
+    <link rel="stylesheet" href="assist/CSS/animate.min.css">
+    <link rel="stylesheet" href="assist/fontawesome/css/all.css" >      <!-- fontawesome link -->
+    <link rel="stylesheet" href="assist/CSS/bootstrap.min.css">         <!-- bootstrap link -->
+    <link rel="stylesheet" href="assist/CSS/style.css">                 <!-- css style link -->
+    <title> Task 05 Cara</title>
+    <link rel="icon" type="image/x-icon" href="assist/Images/Global-Network.ico">
+    
+    
+</head>
+<body id="body">
+    
+    <div style="height: 66px ;">
+
+    </div>
+
+    <!-- section One Navbar -->
+
+    <div class="navLine fixed-top" > <!--sticky-top not workig couse we use overflow-x -->
+        <nav class="navbar navbar-expand-lg navbar-light  fw-bold shadow-sm " id="navLine" aria-label="Fifth navbar example">
+            <div class="container">
+                <a class="navbar-brand" href="#"> <img id="brandLogo" src="assist/Images/logo.png" alt="Cara Logo"> </a>
+                
+                <ul class="navLinks flex-row navbar-nav  order-xl-1 justify-content-end">
+                    <li class="nav-item mx-5"title="Shopping Cart">
+                        <a class="Cart nav-link position-relative"  onclick="oCart()"> 
+                            <div>
+                               <i class="fa-solid fa-bag-shopping" ></i>
+                               <span class="cartN ">0</span> 
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="darkTogle nav-item fs-4" title="Dark/Light Mode" onclick="darkMode()" >
+                        <i class="nav-link fa-solid fa-moon"></i>
+                    </li>
+                </ul>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarsExample05">
+                    <ul class="navLinks navbar-nav ms-auto justify-content-between  mb-2 mb-lg-0 w-50">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"> Home </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Shop </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Blog </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> About </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Contact </a>
+                        </li>
+
+                        <!-- <li class="nav-item">
+                            <a class="Cart nav-link position-relative"  onclick="oCart()"> 
+                                <div>
+                                   <i class="fa-solid fa-bag-shopping"></i>
+                                   <span class="cartN ">0</span> 
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="darkTogle nav-item fs-4" onclick="darkMode()">
+                            <i class="nav-link fa-solid fa-moon"></i>
+                        </li> -->
+                    </ul>
+
+                </div>
+
+                
+            </div>
+          </nav>
+    </div>
+   
+
+    
+    
+
+
+
+
+    <!-- section Tow Header -->
+
+    <header class="HeaderBg pos">
+        <!-- cart section -->
+        <div class="myCart close" id="yCart" >
+            <button class="btn fs-4 text-light" onclick="xCart()">X</button>
+
+            <div class="d-flex justify-content-between px-3 shadow ps-5">
+                <h5 class="ps-5">Item</h5>
+                <h5>Unit price</h5>
+                <h5>units</h5>
+            </div>
+
+            <div class="cartAddItems">
+            </div>
+            
+            <div class="text-center mx-3">
+                <hr>
+                <h5>Sub Total ( <span id="subTotalItem"> 0 </span> &nbsp; <span class="itemOrItems">item</span>  ): &nbsp; $ <span id="subTotalPrice">0.00</span> </h5>
+                <button class="btn btn-dark my-3 px-5">Place Order</button>
+            </div>
+            
+        </div>
+        
+
+
+        <div class="container">
+            <div class="TradeIn d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+                <h5 class="">Trade-in-offer</h5>
+                <h1 class="fw-bold"> Super value deals </h1>
+                <h1 class="allProducts fw-bold my-4"> On all products </h1>
+                <p class="text-muted">save more with coupons & up to 70% off!</p>
+
+                <a class="shopNow" href="#"> Shop Now </a>
+            </div>
+        </div>
+
+        
+    </header>
+
+
+
+
+
+
+
+    <!-- section Three Services -->
+
+
+    <div class="container my-5 pb-5">
+        <div class="Services row row-cols-1  row-cols-md-3 row-cols-lg-6" >
+            
+            <div class="col wow animate__animated animate__backInUp ">
+                <div class="ourService Service-1 card mt-5 shadow ">
+                    <img class="mt-4 m-2" src="assist/Images/f1.png" alt="">
+                    <button class="btn btn-light mb-3 m-2"  type="button">Free Shopping</button>
+                </div>
+            </div>
+
+            <div class="col wow animate__animated animate__backInUp ">
+                <div class="ourService Service-2 card mt-5 shadow ">
+                    <img class="mt-4 m-2" src="assist/Images/f2.png" alt="">
+                    <button class="btn btn-light mb-3 m-2"  type="button">Online Order</button>
+                </div>
+            </div>
+
+            <div class="col wow animate__animated animate__backInUp">
+                <div class="ourService Service-3 card mt-5 shadow ">
+                    <img class="mt-4 m-2" src="assist/Images/f3.png" alt="">
+                    <button class="btn btn-light mb-3 m-2"  type="button">Save Money</button>
+                </div>
+            </div>
+
+            <div class="col wow animate__animated animate__backInUp">
+                <div class="ourService Service-4 card mt-5 shadow ">
+                    <img class="mt-4 m-2" src="assist/Images/f4.png" alt="">
+                    <button class="btn btn-light mb-3 m-2"  type="button">Promotions</button>
+                </div>
+            </div>
+
+            <div class="col wow animate__animated animate__backInUp">
+                <div class="ourService Service-5 card mt-5 shadow ">
+                    <img class="mt-4 m-2" src="assist/Images/f5.png" alt="">
+                    <button class="btn btn-light mb-3 m-2"  type="button">Happy Sell</button>
+                </div>
+            </div>
+
+            <div class="col wow animate__animated animate__backInUp">
+                <div class="ourService Service-6 card mt-5 shadow ">
+                    <img class="mt-4 m-2" src="assist/Images/f6.png" alt="">
+                    <button class="btn btn-light mb-3 m-2"  type="button">F24/7 Support</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- section Four Featured Products -->
+
+
+    <div class="container my-5">
+        <div class="featuredP text-center py-5">
+            <h1 class="fw-bold">Featured Products</h1>
+            <p class="text-muted">Summer Collection New Modern Design</p>
+        </div>
+            
+
+        <div class="fProducts">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/f1.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" >Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0">29.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f1.jpg" data-price="29.99" data-type="Shirt"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/f2.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="24.99">24.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f2.jpg" data-price="24.99" data-type="Shirt"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card  mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3 " src="assist/Images/f3.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="19.99">19.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f3.jpg" data-price="19.99" data-type="Shirt"></i>
+                    
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card  mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3 " src="assist/Images/f4.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="19.99">19.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f4.jpg" data-price="19.99" data-type="Shirt"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/f5.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="30.99">30.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f5.jpg" data-price="30.99" data-type="Shirt"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/f6.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="32.99">32.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f6.jpg" data-price="32.99" data-type="Shirt"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/f7.jpg" alt="Product Image"> </a>
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Pants">Pants</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="30.99">30.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f7.jpg" data-price="30.99" data-type="Pants"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <a href="#"> <img class="oImg card-img-top p-3" src="assist/Images/f8.jpg" alt="Product Image">  </a>
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Blouse">Blouse</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="36.99">36.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart" data-src="assist/Images/f8.jpg" data-price="36.99" data-type="Blouse"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- section Five Repair Services -->
+
+    <div class="sectionFive">
+        <div class="container">
+            <div class="repairS d-flex flex-column justify-content-center align-items-center text-light text-center">
+                <h5>Repair Services</h5>
+            <h1>Up To <span class="text-danger">70% Off-</span>All t-Shirts & Accessories</h1>
+                <button class="btn btn-light px-5" type="button">Explore More</button>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- section six New Arrivals -->
+
+    <div class="container my-5">
+        <div class="featuredP text-center py-5">
+            <h1 class="fw-bold">New Arrivals</h1>
+            <p class="text-muted">Summer Collection New Modern Design</p>
+        </div>
+            
+
+        <div class="fProducts">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/n1.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="19.99">19.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/n2.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="19.99">19.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card  mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3 " src="assist/Images/n3.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="15.99">15.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3 " src="assist/Images/n4.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="16.99">16.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/n5.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="10.99">10.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/n6.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shorts">Shorts</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="20.99">20.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        <img class="oImg card-img-top p-3" src="assist/Images/n7.jpg" alt="Product Image">
+                        
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="29.99">29.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col">
+                    <div class="pCard card mb-5 pCardShadoL">
+                        
+                        <img class="oImg card-img-top p-3" src="assist/Images/n8.jpg" alt="Product Image">
+                        
+
+                        <div class="card-body d-flex justify-content-between align-items-end pt-0" >
+                            <div class="card-text">
+                                <p class="text-muted m-0">adidas</p>
+                                <h4 class="card-title" data-type="Shirt">Shirt</h4>
+
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+    
+                                <h4 class="price m-0" data-price="29.99">29.99</h4>
+                            </div>    
+                                
+                            <i class="fa-solid fa-cart-shopping" title="Add to shopping cart"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- section sevin deals & summer -->
+
+    <div class="section7 container">
+        <div class="row justify-content-between text-light">
+            <div class="crazyD col-12 col-lg-5   d-flex flex-column justify-content-center">
+                <div class=" px-4 w-100">
+                    <h4>crazy deals</h4>
+                    <h1>byu 1 get 1 free</h1>
+                    <p>The best classic dress is on sale at cara</p>
+                    <button class="btn border-light text-light" type="submit">Learn More</button>
+                </div>
+            </div>
+
+
+            <div class="springD col-12 col-lg-5 mt-4 mt-lg-0   d-flex flex-column justify-content-center">
+                <div class="px-4 w-100">
+                    <h4>spring/summer</h4>
+                    <h1>upcomming season</h1>
+                    <p>The best classic dress is on sale at cara</p>
+                    <button class="btn border-light text-light" type="submit">Collection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- section sevin Seasonal  & Footwear Collection -->
+
+    <div class="section7 container my-5">
+        <div class="row justify-content-between text-light">
+            <div class="Seasonal col-12 col-lg-5   d-flex flex-column justify-content-center">
+                <a href="#" class="text-light text-decoration-none">
+                    <div class=" px-4 w-100 fw-bold">
+                        <h2 class="text-uppercase">Seasonal Sale</h1>
+                        <p class="text-danger">winter Collection -50% OFF</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="Footwear col-12 col-lg-5 mt-4 mt-lg-0   d-flex flex-column justify-content-center">
+                <a href="#" class="text-light text-decoration-none">
+                    <div class="px-4 w-100 fw-bold">
+                        <h2 class="text-uppercase">New Footwear Collection</h1>
+                        <p class="text-danger">Spring / Summer 2022</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="T-Shirts col-12 col-lg-5 mt-4 mt-lg-4   d-flex flex-column justify-content-center">
+                <a href="#" class="text-light text-decoration-none">
+                    <div class="px-4 w-100 fw-bold">
+                        <h2 class="text-uppercase">T-Shirts</h1>
+                        <p class="text-danger">New Trendy Prints</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- section Eight Newsletters -->
+
+    <div class="Newsletters d-flex align-items-center">
+        <div class="container">
+            <div class="row  align-items-center justify-content-between text-center text-lg-start">
+                <div class="news col-12 col-lg-6  fw-bold py-5">
+                    <h2 class="text-light">Sign Up For Newsletters</h2>
+                    <p>Get E-mail updates about our latest shop and
+                        <a href="#" class="text-decoration-none">special offers.</a>
+                    </p>
+                </div>
+
+
+                <div class="mail col-12 col-lg-5 mb-5 mt-0 my-lg-5">
+                    <div class="input-group">
+                        <input class="form-control p-3" type="email" id="exampleInputEmail1" placeholder="Your email address" aria-describedby="emailHelp">
+                        <button type="submit" class="btn">Sign up</button>
+                      </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- section last Footer -->
+
+    <footer class="LastSec">
+        <div class="container my-5 pt-5">
+            <div class="row text-center text-lg-start">
+
+                <div class="col-12 col-lg-4 mb-5 mb-lg-0">
+                    <img src="assist/Images/logo.png" alt="Logo Image">
+                    <h5 class="fw-bold mt-4">Contact</h5>
+
+                    <div class="Contact my-4">
+                        <h6> <span class="fw-bold">Address: </span>562 Wellingtom Road. Street 32. San Francisco</h5>
+                        <h6> <span class="fw-bold">Phone: </span> +01 22222 365/(+9)012345 6789</h5>
+                        <h6> <span class="fw-bold">Hours: </span>10:00 - 18:00. Mon -Sat</h5>
+                    </div>
+
+                    <h5 class="fw-bold mt-4">Follow Us</h5>
+
+                    <div class="followUs">
+                        <a class="mr-2" href="https://www.facebook.com/"> <i class="fa-brands fa-facebook-f"></i> </a>
+                        <a class="mx-2" href="https://twitter.com/"> <i class="fa-brands fa-twitter"></i> </a>
+                        <a class="mx-2" href="https://instagram.com/"> <i class="fa-brands fa-instagram"></i></a>
+                        <a class="mx-2" href="https://pinterest.com/"> <i class="fa-brands fa-pinterest-p"></i> </a>
+                        <a class="mx-2" href="https://youtube.com/"> <i class="fa-brands fa-youtube"></i> </a>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-12 col-md-6 col-lg-2 mb-5 mb-lg-0">
+                    <h5 class="fw-bold mb-4">About</h5>
+
+                    <div class="about">
+                        <h6> <a href="#" class="text-muted text-decoration-none"> About Us </a> </h6>
+                        <h6> <a href="#" class="text-muted text-decoration-none"> Delivery Information </a> </h6>
+                        <h6> <a href="#" class="text-muted text-decoration-none"> Privacy Policy </a> </h6>
+                        <h6> <a href="#" class="text-muted text-decoration-none"> Terms & Conditions </a> </h6>
+                        <h6> <a href="#" class="text-muted text-decoration-none"> Contact Us</a> </h6>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-12 col-md-6 col-lg-2  mb-5 mb-lg-0">
+                    <h5 class="fw-bold mb-4">My Account</h5>
+
+                    <div class="account">
+                        <h6> <a href="#" class="text-muted text-decoration-none"> Sign In </a> </h6>
+                        <h6> <a href="#" class="text-muted text-decoration-none"> View Vart </a> </h6>
+                        <h6> <a href="#" class="text-muted text-decoration-none"> My Wishlist </a> </h6>
+                        <h6> <a href="#" class="text-muted text-decoration-none"> Track My Order </a> </h6>
+                        <h6> <a href="#" class="text-muted text-decoration-none"> Help</a> </h6>
+                    </div>
+                </div>
+
+
+
+                <div class="install col-12 col-lg-4 mb-5 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Install App</h5>
+                    <p class="text-muted" >From App Srore or Google Play</p>
+                    
+                    <div class="store mb-3">
+                        <a href="#">
+                            <img src="assist/Images/app.jpg" alt="App Store">
+                        </a>
+
+                        <a href="#">
+                            <img src="assist/Images/play.jpg" alt="App Store">
+                        </a>
+                    </div>
+
+                    <p class="text-muted" >SEcured Payment Gateways</p>
+                    
+                    <a href="#">
+                        <img src="assist/Images/pay.png" alt="Payment">
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-muted text-center">© Ecommerce Company</p>
+
+        </div>
+    </footer>
+
+
+
+    
+    
+    <script src="assist/JS/jquery-3.6.0.min.js"></script>
+    <script src="assist/JS/popper.min.js"></script>
+    <script src="assist/JS/bootstrap.min.js"></script>
+    
+    <!-- animation wow plugin js -->
+    <script src="assist/JS/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <script src="assist/JS/main.js"></script>
+
+</body>
+</html>
