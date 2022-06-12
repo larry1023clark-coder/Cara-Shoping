@@ -9,9 +9,8 @@ function oCart (){
 
 
 function xCart (){
-    // $("#yCart").fadeOut(2000);
     cart.classList.toggle('close') ;
-    // cart.style.display = "none";
+
 }
 
 
@@ -73,17 +72,15 @@ let quantaty = document.querySelectorAll('.quantaty') ;
 let totalItem = document.querySelector('#subTotalItem')
 let totalPrice = document.getElementById('subTotalPrice')
 
-let cartProductArray =[];
-let removeItemBtns = [];
-
 let cartItemeProduct = document.querySelectorAll('.cartProduct')
 
 let itemOrItems = document.querySelector('.itemOrItems')
 
-let cartNVar = 1
-let totalItemVar = 1
+let cartNVar = 0
+let totalItemVar = 0
 let totalPriceVar = 0.00
 let cartN = document.querySelector('.cartN')
+
 
 // cartN.innerHTML = cartNVar ;
 
@@ -120,19 +117,18 @@ cartIcon.forEach(function(car){
         let itemQuantaty = document.createElement('h5')
 
         let qDecrease = document.createElement('span')
-        let qDecreaseText = document.createTextNode("-  ")
+        let qDecreaseText = document.createTextNode("-")
         qDecrease.appendChild(qDecreaseText)
         qDecrease.setAttribute('class', "decrease")
         qDecrease.setAttribute('title', "decrease quantaty")
-        qDecrease.setAttribute('onclick', "decreaseItemBtn()")
 
         let quantaty = document.createElement('span')
-        let quantatyN = document.createTextNode(" 1 ")
+        let quantatyN = document.createTextNode(1)
         quantaty.appendChild(quantatyN)
         quantaty.setAttribute('class', "quantaty")
 
         let qIncrease = document.createElement('span')
-        let qIncreaseText = document.createTextNode("  +")
+        let qIncreaseText = document.createTextNode("+")
         qIncrease.appendChild(qIncreaseText)
         qIncrease.setAttribute('class', "increase")
         qIncrease.setAttribute('title', "increase quantaty")
@@ -155,6 +151,7 @@ cartIcon.forEach(function(car){
         divAddItems.appendChild(itemDiv)
 
 
+
         // divAddItems.innerHTML += 
         // '<div class="cartProduct">' 
         // + '<h4 class="removeItem" title="Remove Item">x</h4>' 
@@ -165,24 +162,114 @@ cartIcon.forEach(function(car){
         // + '<span class="quantaty">1</span>'  
         // +'<span class="increase" title="Increase quantaty">&nbsp; +</span>' 
         // + '</h5>' + '</div>'
-      
-        cartN.innerHTML = cartNVar++
-        totalItem.innerHTML = totalItemVar++
-        
+    
+
+
+        // edit sub items cout +1    
+        totalItemVar = totalItemVar + 1
+        cartN.innerHTML = totalItemVar
+        totalItem.innerHTML = totalItemVar
+
         totalPriceVar = totalPriceVar + Number(bb.target.dataset.price) ;
                                         // parseInt  it's remove desimal .99
         totalPrice.innerHTML = totalPriceVar.toFixed(2) 
 
         itemOrItemsFun()
+        
 
 
-        cartProductArray.unshift(itemDiv)
-        removeItemBtns.unshift(removeItem)
-        console.log(cartProductArray)
-        console.log(cartItemeProduct)
-        console.log(removeItemBtns)
+        // remove product
+        removeItem.addEventListener('click', function(){
+            itemDiv.remove()
+
+            // edit sub items cout -1
+            totalItemVar = totalItemVar - 1
+            cartN.innerHTML = totalItemVar
+            totalItem.innerHTML = totalItemVar
+
+            // edit sub total price
+            totalPriceVar = totalPriceVar - Number(bb.target.dataset.price) ;
+            totalPrice.innerHTML = totalPriceVar.toFixed(2) 
+
+            itemOrItemsFun()
+
+        })
+
+
+
+
+
+        // Increase item count
+        qIncrease.addEventListener('click', function(){
+            quantatyN.textContent++
+            quantaty.appendChild(quantatyN)
+
+            // edit sub items cout +1    
+            totalItemVar = totalItemVar + 1
+            cartN.innerHTML = totalItemVar
+            totalItem.innerHTML = totalItemVar
+
+            totalPriceVar = totalPriceVar + Number(bb.target.dataset.price) ;
+                                            // parseInt  it's remove desimal .99
+            totalPrice.innerHTML = totalPriceVar.toFixed(2) 
+            
+        })
+
+
+
+        // Decrease item count 
+        qDecrease.addEventListener('click', function(){
+            if(quantatyN.textContent <= 1 ){
+                
+
+            }else{
+                quantatyN.textContent--
+                quantaty.appendChild(quantatyN)
+                
+                // edit sub items cout -1
+                totalItemVar = totalItemVar - 1
+                cartN.innerHTML = totalItemVar
+                totalItem.innerHTML = totalItemVar
+
+                // edit sub total price
+                totalPriceVar = totalPriceVar - Number(bb.target.dataset.price) ;
+                totalPrice.innerHTML = totalPriceVar.toFixed(2) 
+
+                itemOrItemsFun()
+            }
+
+        })
+
+
+
     })
 })
+
+
+
+
+
+// to display item or items
+function itemOrItemsFun(){
+
+    if(totalItemVar <= 1 ){
+        itemOrItems.innerHTML = "item"
+    }else if(totalItemVar > 1){
+        itemOrItems.innerHTML = "items"
+    }
+}
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -196,111 +283,4 @@ cartIcon.forEach(function(car){
 
 
 
-removeItemBtns.forEach(function(remove){
-    remove.addEventListener('click', function(item){
-        item.removeItem(itemDiv)
-        cartProductArray
-        cartN.innerHTML = cartN - 1
 
-        cartNVar = cartNVar--
-        cartN.innerHTML = cartNVar
-        totalItem.innerHTML = totalItemVar--
-
-        totalPriceVar = totalPriceVar - Number(bb.target.dataset.price) ;
-        totalPrice.innerHTML = totalPriceVar.toFixed(2) 
-    })
-
-})
-
-
-let decrease = document.querySelector('.decrease') ;
-let quantatyItems = document.querySelector('.quantaty')
-
-function decreaseItemBtn(){
-    if(quantatyItems > 1){
-        quantatyItems.innerHTML = quantatyItems--
-        console.log('now remov item')
-
-    }else{
-        console.log('you can remove item instate')
-    }
-}
-
-
-function increaseItemBtn(){
-    if(quantatyItems){
-        quantatyItems.innerHTML = quantatyItems + 1
-    }else{
-        console.log('not found')
-
-    }
-    
-    console.log(quantatyItems)
-    console.log('now add item')
-}
-
-
-document.addEventListener('click', function(inc){
-    if(inc.target.className === "increase"){
-        parseInt(quantatyItems = quantatyItems + 1);
-        console.log(quantatyItems)
-        console.log('now add item')
-        console.log(decrease)
-    console.log(cartItemeProduct)
-        
-    }
-})
-
-// let decrease = document.querySelectorAll('.decrease') ;
-// let increase = document.querySelectorAll('.increase') ;
-// let quantatyItems = document.querySelectorAll('.quantaty')
-
-// decrease.forEach(function(min){
-//     min.addEventListener('click', function(mm){
-//         quantatyItems.forEach(function(d){
-//             d = quantatyItems++
-//         }) 
-//     })
-// })
-
-
-
-function itemOrItemsFun(){
-
-if(totalItemVar <= 1 ){
-    itemOrItems.innerHTML = "item"
-}else{
-    itemOrItems.innerHTML = "items"
-}}
-
-
-
-
-
-
-
-
-
-
-// function decreaseItem(){
-//     if (quantaty >= 1){
-//         quantaty = quantaty - 1;
-//     }else{
-
-// }   }
-
-// decrease.addEventListener('click', decreaseItem)
-
-
-
-
-document.addEventListener('click', function(inc){
-    if(inc.target.className === "increase"){
-        quantaty = quantaty++;
-    }
-})
-
-
-
-// decrease.addEventListener('click', increaseQun)
-// increase.addEventListener('click', increaseQun)

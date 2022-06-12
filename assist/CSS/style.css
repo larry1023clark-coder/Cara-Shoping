@@ -270,6 +270,13 @@ body, html{
 
 
 
+.cartAddItems{
+    overflow-y: auto;
+    height: 480px;
+}
+
+
+
 .removeItem, .decrease, .increase{
     cursor: pointer;
 }
