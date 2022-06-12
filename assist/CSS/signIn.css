@@ -19,9 +19,9 @@
 
 
 body{
-    /* height: 91vh; */
+    height: 100vh;
     background-image: url(../Images/hero4.png);
-    /* background-position: center; */
+    background-position: center;
     background-size: cover;
     
 }
