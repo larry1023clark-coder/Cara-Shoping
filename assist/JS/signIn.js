@@ -33,7 +33,7 @@ function funEailValidationEmptyIn(){
 
 
 
-inputEmailSign.addEventListener('keyup', funEailValidationIn)
+inputEmailSign.addEventListener('input', funEailValidationIn)
 
 // Validation sign in email
 function funEailValidationIn(){
@@ -80,7 +80,7 @@ function funPassValidationEmptyIn(){
 
 
 
-inputPassSign.addEventListener('keyup', funPassValidation)
+inputPassSign.addEventListener('input', funPassValidation)
 
 
 function funPassValidation(){

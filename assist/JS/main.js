@@ -81,20 +81,29 @@ let totalItemVar = 0
 let totalPriceVar = 0.00
 let cartN = document.querySelector('.cartN')
 
-
+let picArray = []
 // cartN.innerHTML = cartNVar ;
 
+let informModal = document.querySelector('#informModal')
 
 
 cartIcon.forEach(function(car){
     car.addEventListener('click', function(bb){
 
+        
+        console.log(picArray)
+        if(picArray.includes(bb.target.dataset.src)){
+            console.log('already in array')
+            $("#informModal").modal("show");
+        }else{
+
+        
         // add remove item btn 
-        let removeItem = document.createElement('h4')
-        removeItem.setAttribute('class', 'removeItem')
+        let removeItem = document.createElement('i')
+        removeItem.setAttribute('class', 'removeItem  fa-solid fa-trash-can')
         removeItem.setAttribute('title', 'Remove this Item')
-        let removeItemBtn = document.createTextNode("x")
-        removeItem.appendChild(removeItemBtn)
+        // let removeItemBtn = document.createTextNode("x")
+        // removeItem.appendChild(removeItemBtn)
 
         // add item img
         let itemImg = document.createElement('img')
@@ -113,13 +122,13 @@ cartIcon.forEach(function(car){
         itemPrice.appendChild(itemPriceData)
         
 
-        // add quntaty cection
+        // add quntaty section
         let itemQuantaty = document.createElement('h5')
 
-        let qDecrease = document.createElement('span')
-        let qDecreaseText = document.createTextNode("-")
-        qDecrease.appendChild(qDecreaseText)
-        qDecrease.setAttribute('class', "decrease")
+        let qDecrease = document.createElement('i')
+        // let qDecreaseText = document.createTextNode("-")
+        // qDecrease.appendChild(qDecreaseText)
+        qDecrease.setAttribute('class', "decrease fa-solid fa-circle-minus")
         qDecrease.setAttribute('title', "decrease quantaty")
 
         let quantaty = document.createElement('span')
@@ -127,10 +136,10 @@ cartIcon.forEach(function(car){
         quantaty.appendChild(quantatyN)
         quantaty.setAttribute('class', "quantaty")
 
-        let qIncrease = document.createElement('span')
-        let qIncreaseText = document.createTextNode("+")
-        qIncrease.appendChild(qIncreaseText)
-        qIncrease.setAttribute('class', "increase")
+        let qIncrease = document.createElement('i')
+        // let qIncreaseText = document.createTextNode("+")
+        // qIncrease.appendChild(qIncreaseText)
+        qIncrease.setAttribute('class', "increase fa-solid fa-circle-plus")
         qIncrease.setAttribute('title', "increase quantaty")
         // qIncrease.setAttribute('onclick', "increaseItemBtn()")
 
@@ -138,6 +147,7 @@ cartIcon.forEach(function(car){
         itemQuantaty.appendChild(qDecrease)
         itemQuantaty.appendChild(quantaty)
         itemQuantaty.appendChild(qIncrease)
+
 
         // add item data to one div
         let itemDiv = document.createElement('div')
@@ -150,7 +160,9 @@ cartIcon.forEach(function(car){
 
         divAddItems.appendChild(itemDiv)
 
-
+        // add item's pic to array
+        picArray.push(bb.target.dataset.src)
+        
 
         // divAddItems.innerHTML += 
         // '<div class="cartProduct">' 
@@ -192,6 +204,11 @@ cartIcon.forEach(function(car){
             totalPrice.innerHTML = totalPriceVar.toFixed(2) 
 
             itemOrItemsFun()
+
+            // remove items's pic from array
+            let removePicArray = picArray.indexOf(bb.target.dataset.src)
+            picArray.splice(removePicArray, 1)
+            
 
         })
 
@@ -242,7 +259,7 @@ cartIcon.forEach(function(car){
 
 
 
-    })
+    }})
 })
 
 

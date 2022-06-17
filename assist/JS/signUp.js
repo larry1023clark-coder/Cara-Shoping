@@ -51,7 +51,7 @@ function funCheckFNameEmpty(){
 let inputFName = document.querySelector('#fName');
 let checkFName = document.querySelector('.checkFName')
 
-inputFName.addEventListener('keyup', funCheckFName)
+inputFName.addEventListener('input', funCheckFName)
 
 function funCheckFName(){
     if(inputFName.value.match(nameValidation)){
@@ -92,7 +92,7 @@ function funCheckLNameEmpty(){
 let inputLName = document.querySelector('#lname');
 let checkLName = document.querySelector('.checkLName')
 
-inputLName.addEventListener('keyup', funCheckLName)
+inputLName.addEventListener('input', funCheckLName)
 
 function funCheckLName(){
     if(inputLName.value.match(nameValidation)){
@@ -115,7 +115,7 @@ function funCheckLName(){
 let inputEmailSign = document.querySelector('#inputEmailNew') ;
 let signUpCheck_Email = document.querySelector('.checkEmail')
 
-inputEmailSign.addEventListener('keyup', funEailValidationUp)
+inputEmailSign.addEventListener('input', funEailValidationUp)
 
 function funEailValidationUp(){
 
@@ -161,7 +161,7 @@ let inputPhone = document.querySelector('#inputPhone')
 let checkPhon = document.querySelector('.checkPhon')
 
 
-inputPhone.addEventListener('keyup', funPhoneValidation)
+inputPhone.addEventListener('input', funPhoneValidation)
 
 
 function funPhoneValidation(){
@@ -209,7 +209,7 @@ function funPhoneValidationEmpty(){
 let inputNewPass = document.querySelector('#inputNewPass') ;
 let CheckNewPass = document.querySelector('.CheckNewPass') ;
 
-inputNewPass.addEventListener('keyup', funNewPassValidation)
+inputNewPass.addEventListener('input', funNewPassValidation)
 
 
 function funNewPassValidation(){
@@ -247,7 +247,7 @@ function funNewPassValidationEmpty(){
 let inputConfirmPass = document.querySelector('#inputConfirmPass')
 let CheckConfirmPass = document.querySelector('.CheckConfirmPass')
 
-inputConfirmPass.addEventListener('keyup', funConfirmPassValidation)
+inputConfirmPass.addEventListener('input', funConfirmPassValidation)
 
 function funConfirmPassValidation(){
     if(inputNewPass.value != "" && inputConfirmPass.value == inputNewPass.value){
