@@ -90,10 +90,7 @@ let informModal = document.querySelector('#informModal')
 cartIcon.forEach(function(car){
     car.addEventListener('click', function(bb){
 
-        
-        console.log(picArray)
         if(picArray.includes(bb.target.dataset.src)){
-            console.log('already in array')
             $("#informModal").modal("show");
         }else{
 
@@ -193,22 +190,25 @@ cartIcon.forEach(function(car){
         // remove product
         removeItem.addEventListener('click', function(){
             itemDiv.remove()
+            let z = 1
 
-            // edit sub items cout -1
-            totalItemVar = totalItemVar - 1
-            cartN.innerHTML = totalItemVar
-            totalItem.innerHTML = totalItemVar
+            do {
+                // edit sub items cout -1
+                totalItemVar = totalItemVar - 1
+                cartN.innerHTML = totalItemVar
+                totalItem.innerHTML = totalItemVar
 
-            // edit sub total price
-            totalPriceVar = totalPriceVar - Number(bb.target.dataset.price) ;
-            totalPrice.innerHTML = totalPriceVar.toFixed(2) 
+                // edit sub total price
+                totalPriceVar = totalPriceVar - Number(bb.target.dataset.price) ;
+                totalPrice.innerHTML =Math.abs(totalPriceVar.toFixed(2) ) 
 
-            itemOrItemsFun()
+                itemOrItemsFun()
 
-            // remove items's pic from array
-            let removePicArray = picArray.indexOf(bb.target.dataset.src)
-            picArray.splice(removePicArray, 1)
-            
+                // remove items's pic from array
+                let removePicArray = picArray.indexOf(bb.target.dataset.src)
+                picArray.splice(removePicArray, 1)
+                z++
+            } while (z <= quantatyN.textContent);
 
         })
 
